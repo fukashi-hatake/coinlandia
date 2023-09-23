@@ -10,7 +10,7 @@ def main():
 
     st.sidebar.info("Collectioner: **Firuz Juraev**", icon='😎')
     st.sidebar.info("Montherland: **Uzbekistan** 🇺🇿")
-    st.sidebar.info("Oldest Coin: **1 Kopek(Russian Empire) - 1896**", icon='🏆')
+    st.sidebar.info("Oldest Coin: **1 Kopek (Russian Empire) - 1896**", icon='🏆')
     
     coin_data_new, coin_data_old, short_list_data = data.load_data()
 
