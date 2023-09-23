@@ -12,12 +12,12 @@ def main():
     st.sidebar.info("Montherland: **Uzbekistan** 🇺🇿")
     st.sidebar.info("Oldest Coin: **1 Kopek (Russian Empire) - 1896**", icon='🏆')
     
-    coin_data_new, coin_data_old, short_list_data = data.load_data()
+    coin_data_new, coin_data_old, short_list_data, one_coin_data = data.load_data()
 
-    total_number = coin_data_new['Count'].sum() + coin_data_old['Count'].sum() + short_list_data['Count'].sum()
-    total_types  = coin_data_new['Type'].sum()  + coin_data_old['Type'].sum() + short_list_data['Type'].sum()
+    total_number = coin_data_new['Count'].sum() + coin_data_old['Count'].sum() + short_list_data['Count'].sum() + one_coin_data['Count'].sum()
+    total_types  = coin_data_new['Type'].sum()  + coin_data_old['Type'].sum() + short_list_data['Type'].sum() + one_coin_data['Type'].sum()
 
-    number_of_countries = coin_data_new.shape[0] + short_list_data.shape[0]
+    number_of_countries = coin_data_new.shape[0] + short_list_data.shape[0] + one_coin_data.shape[0]
 
     st.sidebar.info("Number of countries: {}".format(number_of_countries), icon='🌏')
 
@@ -31,8 +31,12 @@ def main():
     col2.write("List of former countries and number of coins")
     col2.dataframe(coin_data_old)
 
-    st.write("List of countries and number of coins")
-    st.dataframe(short_list_data)
+    col3, col4 = st.columns(2)
+    col3.write("List of countries and number of coins")
+    col3.dataframe(short_list_data)
+
+    col3.write("List of one-copy only countries and number of coins")
+    col3.dataframe(one_coin_data)
 
 
 if __name__ == '__main__':
