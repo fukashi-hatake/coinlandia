@@ -7,6 +7,8 @@ def main():
     st.markdown('<h1 style="color:#4B7CA7;font-size:24px;">Coin Collection of Firuz</h1>', unsafe_allow_html=True) 
     st.write("")
 
+
+    st.sidebar.info("Collectioner: **Firuz Juraev**", icon='😎')
     st.sidebar.info("Montherland: **Uzbekistan** 🇺🇿")
     
     coin_data_new, coin_data_old, short_list_data = data.load_data()
@@ -24,7 +26,7 @@ def main():
     st.write("List of top countries and number of coins")
     st.dataframe(coin_data_new)
 
-    st.write("List of old countries and number of coins")
+    st.write("List of former countries and number of coins")
     st.dataframe(coin_data_old)
 
     st.write("List of countries and number of coins")
