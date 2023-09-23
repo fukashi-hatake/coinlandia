@@ -35,8 +35,8 @@ def main():
     col3.write("List of countries and number of coins")
     col3.dataframe(short_list_data)
 
-    col3.write("List of one-copy only countries and number of coins")
-    col3.dataframe(one_coin_data)
+    col4.write("List of one-copy only countries and number of coins")
+    col4.dataframe(one_coin_data)
 
 
 if __name__ == '__main__':
