@@ -24,11 +24,12 @@ def main():
     st.info("Total number of coins: **{}**".format(total_number), icon='🪙')
     st.info("Total number of coin types: **{}**".format(total_types))
 
-    st.write("List of top countries and number of coins")
-    st.dataframe(coin_data_new)
+    col1, col2 = st.columns(2)
+    col1.write("List of top countries and number of coins")
+    col1.dataframe(coin_data_new)
 
-    st.write("List of former countries and number of coins")
-    st.dataframe(coin_data_old)
+    col2.write("List of former countries and number of coins")
+    col2.dataframe(coin_data_old)
 
     st.write("List of countries and number of coins")
     st.dataframe(short_list_data)
